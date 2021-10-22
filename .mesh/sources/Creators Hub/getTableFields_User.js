@@ -26,7 +26,7 @@ module.exports = {
     "Type": "varchar(100)",
     "Collation": "utf8mb4_0900_ai_ci",
     "Null": "YES",
-    "Key": "",
+    "Key": "UNI",
     "Default": null,
     "Extra": "",
     "Privileges": "select,insert,update,references",

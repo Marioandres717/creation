@@ -1,0 +1,14 @@
+sources:
+  - name: Creators Hub
+    handler:
+      mysql:
+        host: localhost
+        port: 3306
+        user: root
+        password: asd123
+        database: creation
+require:
+  - ts-node/register/transpile-only
+
+additionalResolvers:
+  - ./src/mesh-resolvers.ts

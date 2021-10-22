@@ -21,7 +21,10 @@
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "gen-ts": "ts-node scripts/generate-typings",
     "gen-graphql": "yarn mesh build",
-    "gen-sql": "yarn prisma db pull"
+    "gen-sql": "yarn prisma db pull",
+    "gen-sql-client": "yarn prisma generate",
+    "gen-sql-migration": "yarn prisma migrate dev --name",
+    "gen-all": "yarn gen-sql && yarn gen-sql-client && yarn gen-graphql && yarn gen-ts"
   },
   "dependencies": {
     "@graphql-mesh/cli": "^0.42.5",

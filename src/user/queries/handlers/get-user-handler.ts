@@ -10,9 +10,10 @@ export class GetUserHandler implements IQueryHandler<GetUserQuery> {
 
   async execute(query: GetUserQuery) {
     try {
-      return await this.repository.user(query.getPrimaryKey());
+      const key = query.getUniqueKey();
+      return key ? await this.repository.user(key) : null;
     } catch (error) {
-      console.error(`GetUserHandler: ${clc.red(error.message)}`);
+      console.error(clc.red(`GetUserHandler: ${error.message}`));
       return null;
     }
   }

@@ -12,7 +12,17 @@ export class UserService {
     });
   }
 
-  users() {
-    throw new Error('Not Implemented');
+  users(
+    limit: number,
+    offset: number,
+    order: Prisma.UserOrderByWithRelationInput,
+    userWhereInput: Prisma.UserWhereInput,
+  ) {
+    return this.prisma.user.findMany({
+      where: userWhereInput,
+      take: limit,
+      skip: offset,
+      orderBy: order,
+    });
   }
 }

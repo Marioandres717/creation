@@ -5,7 +5,7 @@ export class GetUserQuery {
     readonly username?: string,
   ) {}
 
-  getPrimaryKey() {
+  getUniqueKey() {
     return this.id
       ? { id: this.id }
       : this.email

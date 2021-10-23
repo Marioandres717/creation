@@ -18,7 +18,7 @@ export enum OrderBy {
 }
 
 export interface User_WhereInput {
-    id?: Nullable<string>;
+    id?: Nullable<number>;
     email?: Nullable<string>;
     username?: Nullable<string>;
     type?: Nullable<string>;

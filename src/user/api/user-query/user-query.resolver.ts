@@ -15,13 +15,9 @@ export class UserQueryResolver {
     @Args('orderBy') orderBy: User_OrderByInput,
   ): Promise<[User]> {
     const { id, email, username } = where;
-    const validId = !id
-      ? undefined
-      : isNaN(Number(id))
-      ? undefined
-      : Number(id);
+
     const result = await this.queryBus.execute<GetUserQuery, User>(
-      new GetUserQuery(validId, email, username),
+      new GetUserQuery(id, email, username),
     );
 
     return result ? [result] : null;

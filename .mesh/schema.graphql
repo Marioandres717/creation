@@ -21,7 +21,7 @@ enum User_type {
 }
 
 input User_WhereInput {
-  id: String
+  id: Int
   email: String
   username: String
   type: String

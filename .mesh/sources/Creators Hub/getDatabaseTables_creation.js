@@ -12,7 +12,7 @@ module.exports = {
     "INDEX_LENGTH": "32768",
     "DATA_FREE": "0",
     "AUTO_INCREMENT": null,
-    "CREATE_TIME": "2021-10-22 21:50:34",
+    "CREATE_TIME": "2021-10-23 09:42:46",
     "UPDATE_TIME": null,
     "CHECK_TIME": null,
     "TABLE_COLLATION": "utf8mb4_0900_ai_ci",

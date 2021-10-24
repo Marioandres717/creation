@@ -18,10 +18,11 @@ export enum OrderBy {
 }
 
 export interface User_WhereInput {
-    id?: Nullable<number>;
+    id?: Nullable<string>;
     email?: Nullable<string>;
     username?: Nullable<string>;
     type?: Nullable<string>;
+    active?: Nullable<string>;
 }
 
 export interface User_OrderByInput {
@@ -29,6 +30,7 @@ export interface User_OrderByInput {
     email?: Nullable<OrderBy>;
     username?: Nullable<OrderBy>;
     type?: Nullable<OrderBy>;
+    active?: Nullable<OrderBy>;
 }
 
 export interface User_InsertInput {
@@ -36,6 +38,7 @@ export interface User_InsertInput {
     email: string;
     username?: Nullable<string>;
     type?: Nullable<User_type>;
+    active: number;
 }
 
 export interface User_UpdateInput {
@@ -43,6 +46,7 @@ export interface User_UpdateInput {
     email?: Nullable<string>;
     username?: Nullable<string>;
     type?: Nullable<User_type>;
+    active?: Nullable<number>;
 }
 
 export interface IQuery {
@@ -57,6 +61,7 @@ export interface User {
     email: string;
     username?: Nullable<string>;
     type?: Nullable<User_type>;
+    active: number;
 }
 
 export interface IMutation {

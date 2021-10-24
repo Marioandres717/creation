@@ -42,5 +42,16 @@ module.exports = {
     "Extra": "",
     "Privileges": "select,insert,update,references",
     "Comment": ""
+  },
+  "active": {
+    "Field": "active",
+    "Type": "tinyint",
+    "Collation": null,
+    "Null": "NO",
+    "Key": "",
+    "Default": "1",
+    "Extra": "",
+    "Privileges": "select,insert,update,references",
+    "Comment": ""
   }
 }

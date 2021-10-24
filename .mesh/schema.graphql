@@ -13,6 +13,7 @@ type User {
   email: String!
   username: String
   type: User_type
+  active: Int!
 }
 
 enum User_type {
@@ -21,10 +22,11 @@ enum User_type {
 }
 
 input User_WhereInput {
-  id: Int
+  id: String
   email: String
   username: String
   type: String
+  active: String
 }
 
 input User_OrderByInput {
@@ -32,6 +34,7 @@ input User_OrderByInput {
   email: OrderBy
   username: OrderBy
   type: OrderBy
+  active: OrderBy
 }
 
 enum OrderBy {
@@ -50,6 +53,7 @@ input User_InsertInput {
   email: String!
   username: String
   type: User_type
+  active: Int!
 }
 
 input User_UpdateInput {
@@ -57,4 +61,5 @@ input User_UpdateInput {
   email: String
   username: String
   type: User_type
+  active: Int
 }

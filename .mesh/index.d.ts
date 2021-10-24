@@ -46,6 +46,7 @@ export declare type User = {
     email: Scalars['String'];
     username?: Maybe<Scalars['String']>;
     type?: Maybe<User_type>;
+    active: Scalars['Int'];
 };
 export declare enum User_type {
     admin = "admin",
@@ -56,12 +57,14 @@ export declare type User_WhereInput = {
     email?: Maybe<Scalars['String']>;
     username?: Maybe<Scalars['String']>;
     type?: Maybe<Scalars['String']>;
+    active?: Maybe<Scalars['String']>;
 };
 export declare type User_OrderByInput = {
     id?: Maybe<OrderBy>;
     email?: Maybe<OrderBy>;
     username?: Maybe<OrderBy>;
     type?: Maybe<OrderBy>;
+    active?: Maybe<OrderBy>;
 };
 export declare enum OrderBy {
     asc = "asc",
@@ -87,12 +90,14 @@ export declare type User_InsertInput = {
     email: Scalars['String'];
     username?: Maybe<Scalars['String']>;
     type?: Maybe<User_type>;
+    active: Scalars['Int'];
 };
 export declare type User_UpdateInput = {
     id?: Maybe<Scalars['Int']>;
     email?: Maybe<Scalars['String']>;
     username?: Maybe<Scalars['String']>;
     type?: Maybe<User_type>;
+    active?: Maybe<Scalars['Int']>;
 };
 export declare type WithIndex<TObject> = TObject & Record<string, any>;
 export declare type ResolversObject<TObject> = WithIndex<TObject>;
@@ -159,6 +164,7 @@ export declare type UserResolvers<ContextType = MeshContext, ParentType extends 
     email?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
     username?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
     type?: Resolver<Maybe<ResolversTypes['User_type']>, ParentType, ContextType>;
+    active?: Resolver<ResolversTypes['Int'], ParentType, ContextType>;
     __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 }>;
 export declare type MutationResolvers<ContextType = MeshContext, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = ResolversObject<{

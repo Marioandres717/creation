@@ -4,10 +4,11 @@ import { UserMutationResolver } from './api/user-mutation/user-mutation.resolver
 import { UserService } from './repository/user/user.service';
 import { CqrsModule } from '@nestjs/cqrs';
 import { QueryHandlers } from './queries/handlers';
-import { PrismaService } from 'src/prisma/prisma/prisma.service';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Module({
   imports: [CqrsModule],
+  exports: [UserService],
   providers: [
     UserQueryResolver,
     UserMutationResolver,

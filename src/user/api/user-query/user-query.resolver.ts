@@ -42,7 +42,7 @@ export class UserQueryResolver {
     }
   }
 
-  @Query('count_Users')
+  @Query('count_User')
   countUsers() {
     throw new Error('Not Implemented');
   }

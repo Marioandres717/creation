@@ -7,7 +7,7 @@ import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     GraphQLModule.forRoot({
-      typePaths: ['./.mesh/*.graphql'],
+      typePaths: ['./.mesh/*.graphql', './**/api/*.graphql'],
       definitions: {
         path: join(process.cwd(), 'src/graphql.ts'),
         emitTypenameField: true,

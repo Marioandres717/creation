@@ -5,7 +5,7 @@ module.exports = {
   "Seq_in_index": 1,
   "Column_name": "id",
   "Collation": "A",
-  "Cardinality": "0",
+  "Cardinality": "2",
   "Sub_part": null,
   "Packed": null,
   "Null": "",

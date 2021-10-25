@@ -6,7 +6,6 @@ schema {
 type Query {
   User(limit: Int, offset: Int, where: User_WhereInput, orderBy: User_OrderByInput): [User]
   count_User(where: User_WhereInput): Int
-  login(authId: String!): String
 }
 
 type User {

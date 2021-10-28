@@ -43,7 +43,7 @@ export class UserQueryResolver {
   }
 
   @Query('count_User')
-  countUsers() {
+  countUsers(): Promise<number> {
     throw new Error('Not Implemented');
   }
 }

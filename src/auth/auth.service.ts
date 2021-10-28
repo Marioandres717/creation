@@ -1,5 +1,5 @@
-import { Prisma } from '.prisma/client';
-import { Injectable } from '@nestjs/common';
+import { Prisma, User } from '.prisma/client';
+import { Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { UserService } from 'src/user/repository/user/user.service';
 
@@ -10,12 +10,15 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async validateUser(UserWhereUniqueInput: Prisma.UserWhereUniqueInput) {
-    const user = await this.userService.user(UserWhereUniqueInput);
-    return user;
+  async validateUser(
+    UserWhereUniqueInput: Prisma.UserWhereUniqueInput,
+  ): Promise<User> {
+    return await this.userService.user(UserWhereUniqueInput);
   }
 
-  async login(user: any) {
-    return this.jwtService.sign({ ...user, expiresIn: 60 });
+  async login(user: Prisma.UserWhereUniqueInput): Promise<string> {
+    const result = await this.validateUser(user);
+    if (!result) throw new UnauthorizedException();
+    return this.jwtService.sign(result);
   }
 }

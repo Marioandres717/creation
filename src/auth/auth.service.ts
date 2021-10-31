@@ -13,12 +13,13 @@ export class AuthService {
   async validateUser(
     UserWhereUniqueInput: Prisma.UserWhereUniqueInput,
   ): Promise<User> {
-    return await this.userService.user(UserWhereUniqueInput);
+    const result = await this.userService.user({ id: UserWhereUniqueInput.id });
+    if (!result) throw new UnauthorizedException();
+    return result;
   }
 
   async login(user: Prisma.UserWhereUniqueInput): Promise<string> {
     const result = await this.validateUser(user);
-    if (!result) throw new UnauthorizedException();
     return this.jwtService.sign(result);
   }
 }

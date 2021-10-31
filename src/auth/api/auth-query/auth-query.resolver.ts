@@ -1,7 +1,7 @@
 import { Args, Query, Resolver } from '@nestjs/graphql';
 import { parseStringToNumber } from 'helper-functions';
 import { AuthService } from 'src/auth/auth.service';
-import { User, User_WhereInput } from 'src/graphql';
+import { User_WhereInput } from 'src/graphql';
 
 @Resolver()
 export class AuthQueryResolver {

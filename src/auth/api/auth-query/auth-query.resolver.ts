@@ -5,7 +5,7 @@ import {
   Resolver,
 } from '@nestjs/graphql';
 import { parseStringToNumber } from 'helper-functions';
-import { AuthService } from 'src/auth/auth.service';
+import { AuthService } from 'src/auth/repository/auth.service';
 import { Context } from 'src/auth/decorators/context.decorator';
 import { User_WhereInput } from 'src/graphql';
 

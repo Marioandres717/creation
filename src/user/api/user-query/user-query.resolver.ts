@@ -5,8 +5,6 @@ import { User, User_OrderByInput, User_WhereInput } from 'src/graphql';
 import { GetUserQuery } from 'src/user/queries/impl/get-user-query';
 import { GetUsersQuery } from 'src/user/queries/impl/get-users-query';
 import { parseStringToNumber } from 'helper-functions';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth-guard';
-import { UseGuards } from '@nestjs/common';
 
 @Resolver('User')
 export class UserQueryResolver {
@@ -45,7 +43,6 @@ export class UserQueryResolver {
   }
 
   @Query('count_User')
-  @UseGuards(JwtAuthGuard)
   countUsers(): Promise<number> {
     throw new Error('Not Implemented');
   }

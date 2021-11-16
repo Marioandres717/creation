@@ -1,6 +1,5 @@
 import { NestFactory } from '@nestjs/core';
 import * as cookieParser from 'cookie-parser';
-import * as csurf from 'csurf';
 
 import { AppModule } from './app.module';
 
@@ -9,9 +8,6 @@ declare const module: any;
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.use(cookieParser());
-  if (process.env.DEV_ENV !== 'true') {
-    app.use(csurf({ cookie: true }));
-  }
   await app.listen(3000);
 
   if (module.hot) {

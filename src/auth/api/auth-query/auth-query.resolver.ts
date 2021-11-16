@@ -6,7 +6,7 @@ import {
 } from '@nestjs/graphql';
 import { v4 as uuidv4 } from 'uuid';
 import { JwtService } from '@nestjs/jwt';
-import { parseStringToNumber } from 'helper-functions';
+import { parseStringToNumber } from 'src/helper-functions';
 import { AuthService } from 'src/auth/repository/auth.service';
 import { Context } from 'src/auth/decorators/context.decorator';
 import { User_WhereInput } from 'src/graphql';
